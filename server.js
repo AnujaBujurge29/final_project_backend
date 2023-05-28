@@ -1,42 +1,44 @@
-// Templet 
+const express = require('express')
+require('dotenv').config()
+const mongoose = require('mongoose')
+const Todos = require('./models/bookList')
+const cors =require('cors')
+const db = mongoose.connection
+const todosData = require('./utilites/data')
+const todosController = require('./controllers/bookList')
 
-// Add dotenv
-require("dotenv").config();
-// Imports or Dependencies
-const express = require("express");
-const app = express();
-// Mongoose info
-const mongoose = require("mongoose");
+// Environmental Varibles
+const app = express()
+const mongoURI = process.env.MONGODB_URI
+const PORT = process.env.PORT || 3001
+
+// Connecting to MongoDB
 mongoose.set("strictQuery", false);
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(mongoURI, { useNewUrlParser: true},
+   () => console.log('MongoDB connection establish') )
 
-mongoose.connection.once("open", () => {
-  console.log("connected to mongo");
-});
+// Error / Disconnection
+db.on('error', err => console.log(err.message + ' is Mongod not running?'))
+db.on('disconnected', () => console.log('mongo disconnected'))
+
 // Middleware
-app.use((req, res, next) => {
-  console.log("I run for all routes");
-  next();
-});
+app.use(express.urlencoded({ extended: false }))// extended: false - does not allow nested objects in query strings
+app.use(express.json()); //use .json(), not .urlencoded()
+app.use(express.static('public')) // we need to tell express to use the public directory for static files... this way our app will find index.html as the route of the application! We can then attach React to that file!
+// app.use(cors())
+app.use(cors({ origin: '*' })) // used to whitelist requests
 
-app.use(express.urlencoded({ extended: false }));
-app.set("view engine", "jsx");
-app.engine("jsx", require("jsx-view-engine").createEngine());
-// Data
+// Routes
+app.use('/todos', todosController) // telling server.js to get the routes from controllers/todos.js
 
-// Routes...
-// Index ----------- GET -------- /things
-// New ------------- GET -------- /things/new
-// DELETE ---------- Destroy ---- /things/:id
-// Update ---------- PUT -------- /things/:id
-// Create ---------- POST ------- /things
-// Edit------------- GET -------- /things/:id/edit
-// Show ------------ GET -------- /things/:id
 
-// Listen
-app.listen(process.env.PORT, () => {
-  console.log(`Port: ${process.env.PORT}`);
-});
+// Seeding the db
+app.get('/seed', async (req, res) => {
+    await Todos.deleteMany({});
+    await Todos.insertMany(todosData);
+    res.send('done!');
+  });
+
+app.listen(PORT, () => {
+    console.log('This message means nothing', PORT)
+  })

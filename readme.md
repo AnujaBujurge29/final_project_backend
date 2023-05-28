@@ -52,6 +52,8 @@ npm i -g nodemon (one time install)
 npm i mongoose@6.11.1
 
 npm i method-override
+
+npm install cors --save
 =============================================== Week 13 =======================================================
 
 
