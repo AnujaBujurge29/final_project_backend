@@ -31,6 +31,9 @@ app.use(cors({ origin: '*' })) // used to whitelist requests
 // Routes
 app.use('/todos', todosController) // telling server.js to get the routes from controllers/todos.js
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
 
 // Seeding the db
 app.get('/seed', async (req, res) => {
