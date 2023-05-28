@@ -3,11 +3,17 @@
 middleware configures things BEFORE routes happen. It's the middle man between the user sending a request, and getting a response
 
 Add dotenv
+
 Imports or Dependencies
+
 Mongoose info
+
 Middleware
+
 Data
+
 Routes...
+
 Listen
 
 # =====================Installations====================================================
