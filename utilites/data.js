@@ -4,7 +4,7 @@ const bookData = [
         "author": "Geraldine McCaughrean",
         "price": 288,
         "description": "India/Iran/Iraq/Egypt/Tajikistan/Arabic",
-        "availability": true,
+        "": true,
         "image": "images/one-thousand-and-one-nights.jpg",
       },
       {
@@ -12,7 +12,7 @@ const bookData = [
         "author": "Valmiki",
         "price": 152,
         "description": "India/Sanskrit",
-        "availability": true,
+        "": true,
         "image": "images/ramayana.jpg",
       },
       {
@@ -20,7 +20,7 @@ const bookData = [
         "author": "Astrid Lindgren",
         "price": 160,
         "description": "Sweden/Swedish/1945",
-        "availability": true,
+        "": true,
         "image": "images/pippi-longstocking.jpg",
       },
       {
@@ -28,7 +28,7 @@ const bookData = [
         "author": "Henrik Ibsen",
         "price": 68,
         "description": "Norway/Norwegian/1879",
-        "availability": true,
+        "": true,
         "image": "images/a-Dolls-house.jpg",
       },
       {
@@ -36,7 +36,7 @@ const bookData = [
         "author": "Hans Christian Andersen",
         "price": 784,
         "description": "Denmark/Danish/1836",
-        "availability": true,
+        "": true,
         "image": "images/fairy-tales.jpg",
       },
       {
@@ -44,7 +44,7 @@ const bookData = [
         "author": "Jonathan Swift",
         "price": 178,
         "description": "Ireland/English/1726",
-        "availability": true,
+        "": true,
         "image": "images/gullivers-travels.jpg",  
       },
       {
@@ -52,7 +52,7 @@ const bookData = [
         "author": "William Shakespeare",
         "price": 432,
         "description": "England/English/1603",
-        "availability": true,
+        "": true,
         "image": "images/hamlet.jpg"
       },
       {
@@ -60,7 +60,7 @@ const bookData = [
         "author": "Mark Twain",
         "price": 224,
         "description": "United States/English/1884",
-        "availability": true,
+        "": true,
         "image": "images/the-adventures-of-huckleberry-finn.jpg",
       }
 ]

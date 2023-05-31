@@ -1,3 +1,5 @@
+const express = require('express')
+const router = express.Router()
 const Book = require("../models/bookList");
 
 const getAllBooks = async (req, res, next) => {
@@ -28,16 +30,15 @@ const getById = async (req, res, next) => {
 };
 
 const addBooks = async (req, res, next) => {
-  const { name, author, price, description, availability, image } = req.body;
+  const { name, author, price, description} = req.body;
   let books;
+  console.log(req.body);
   try {
     books = new Book({
       name,
       author,
       price,
       description,
-      availability,
-      image
     });
     await books.save();
   } catch (err) {
@@ -51,7 +52,7 @@ const addBooks = async (req, res, next) => {
 
 const updateBooks = async (req, res, next) => {
   const id = req.params.id;
-  const { name, author, price, description, availability, image } = req.body;
+  const { name, author, price, description,  } = req.body;
   let books;
   try {
     books = await Book.findByIdAndUpdate(id, {
@@ -59,8 +60,6 @@ const updateBooks = async (req, res, next) => {
       author,
       price,
       description,
-      availability,
-      image
     });
     books = await books.save();
   } catch (err) {

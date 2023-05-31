@@ -16,14 +16,9 @@ const bookSchema = new mongoose.Schema({
    description:{
       type:String
    },
-   availability:{
-      type:Boolean,
-      required: true
-   },
    image:{
       type:String,
    },
-   
 },
 {
    timestamps: true,
