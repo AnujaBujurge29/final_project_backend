@@ -30,7 +30,7 @@ const getById = async (req, res, next) => {
 };
 
 const addBooks = async (req, res, next) => {
-  const { name, author, price, description} = req.body;
+  const { name, author, price, description, image} = req.body;
   let books;
   console.log(req.body);
   try {
@@ -39,6 +39,7 @@ const addBooks = async (req, res, next) => {
       author,
       price,
       description,
+      image
     });
     await books.save();
   } catch (err) {
@@ -52,7 +53,7 @@ const addBooks = async (req, res, next) => {
 
 const updateBooks = async (req, res, next) => {
   const id = req.params.id;
-  const { name, author, price, description,  } = req.body;
+  const { name, author, price, description, image } = req.body;
   let books;
   try {
     books = await Book.findByIdAndUpdate(id, {
@@ -60,6 +61,7 @@ const updateBooks = async (req, res, next) => {
       author,
       price,
       description,
+      image
     });
     books = await books.save();
   } catch (err) {

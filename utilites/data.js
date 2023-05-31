@@ -5,64 +5,56 @@ const bookData = [
         "price": 288,
         "description": "India/Iran/Iraq/Egypt/Tajikistan/Arabic",
         "": true,
-        "image": "images/one-thousand-and-one-nights.jpg",
+        "image": "https://i.imgur.com/zjqYgGq.jpg",
       },
       {
         "name": "Ramayana",
         "author": "Valmiki",
         "price": 152,
         "description": "India/Sanskrit",
-        "": true,
-        "image": "images/ramayana.jpg",
+        "image": "https://i.imgur.com/fSVetxP.jpg",
       },
       {
         "name": "Pippi Longstocking",
         "author": "Astrid Lindgren",
         "price": 160,
         "description": "Sweden/Swedish/1945",
-        "": true,
-        "image": "images/pippi-longstocking.jpg",
+        "image": "https://i.imgur.com/UJSqBe2.jpg",
       },
       {
         "name": "A Doll's House",
         "author": "Henrik Ibsen",
         "price": 68,
         "description": "Norway/Norwegian/1879",
-        "": true,
-        "image": "images/a-Dolls-house.jpg",
+        "image": "https://i.imgur.com/UkTP0dl.jpg",
       },
       {
         "name": "Fairy tales",
         "author": "Hans Christian Andersen",
         "price": 784,
         "description": "Denmark/Danish/1836",
-        "": true,
-        "image": "images/fairy-tales.jpg",
+        "image": "https://i.imgur.com/0nnTRPq.jpg",
       },
       {
         "name": "Gulliver's Travels",
         "author": "Jonathan Swift",
         "price": 178,
         "description": "Ireland/English/1726",
-        "": true,
-        "image": "images/gullivers-travels.jpg",  
+        "image": "https://i.imgur.com/cseEz4T.jpg",  
       },
       {
         "name": "Hamlet",
         "author": "William Shakespeare",
         "price": 432,
         "description": "England/English/1603",
-        "": true,
-        "image": "images/hamlet.jpg"
+        "image": "https://i.imgur.com/ShWNuPg.jpg"
       },
       {
         "name": "The Adventures of Huckleberry Finn",
         "author": "Mark Twain",
         "price": 224,
         "description": "United States/English/1884",
-        "": true,
-        "image": "images/the-adventures-of-huckleberry-finn.jpg",
+        "image": "https://i.imgur.com/0rn1VUL.jpg",
       }
 ]
-
 module.exports = bookData;
